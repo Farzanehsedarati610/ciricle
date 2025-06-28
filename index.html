@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ciricle Wallet</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    #balance {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    canvas {
+      margin-top: 20px;
+    }
+    .wallet-button {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+    .wallet-button img {
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ciricle Wallet</h1>
+  <div id="balance">Balance: Loading...</div>
+  <canvas id="qr"></canvas>
+
+  <!-- Save to Google Wallet Button -->
+  <a class="wallet-button" href="https://pay.google.com/gp/v/save/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ijc3YjRmNmU1ODcxYTQxZmI0ODBlNTAyNTIwMTJlNThmYjY4ODI4YzUifQ.eyJpc3MiOiJ3YWxsZXQtc2VydmljZUBjaXJpY2xlLXdhbGxldC5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imdvb2dsZSIsInR5cCI6InNhdmV0b3dhbGxldCIsInBheWxvYWQiOnsiZ2VuZXJpY09iamVjdHMiOlt7ImlkIjoiY2lyaWNsZS13YWxsZXQuY2lyaWNsZV93YWxsZXRfdXNlcjEyMyIsImNsYXNzSWQiOiJjaXJpY2xlLXdhbGxldC5jaXJpY2xlX3dhbGxldCIsInN0YXRlIjoiYWN0aXZlIiwidGV4dE1vZHVsZXNEYXRhIjpbeyJoZWFkZXIiOiJDaXJpY2xlIFdhbGxldCIsImJvZHkiOiJCYWxhbmNlOiAkMy4xNWUrNTEifV0sImJhcmNvZGUiOnsidHlwZSI6InFyQ29kZSIsInZhbHVlIjoiaHR0cHM6Ly9jaXJpY2xlLmFwcC9wYXkvdXNlcjEyMyJ9fV19LCJpYXQiOjE3NTEwOTY0MDd9.j8PIMZtprXwfZrROywR-_G4M3Zd7DghUlwLi2hncTEdmo7k_rIrAiKNtYJoCXBlGJgY8ChtPaO-Az8b4ob78ZoBn6OY-4NsHQEFWOn3hfq1tuRhnFqCPRgbs2_d7qjXjvAimQNsHtZrtVud9rwCi0ryXUl5ma-8a-CCeRlO_eE2jUx1Nqbz_c7d3w_JS18u2Sy6g5BdMu46PpztDS-_XIj_byu-_G0vt1_to5RGfTNJUo0tA517tASErD4-hEiYabOlaGwnUqEArhS-Uno9vUlddArjMeoJn9BdOgl7rtCNj61iiQP7N_L-PbMeefhZKFqTEan5Y6Oqk3InnZeEo-w" target="_blank">
+  <img src="https://www.gstatic.com/images/icons/material/system/2x/account_balance_wallet_white_48dp.png" width="24" />
+  Save to Google Wallet
+</a>
+
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://pay.google.com/gp/v/save/eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ijc3YjRmNmU1ODcxYTQxZmI0ODBlNTAyNTIwMTJlNThmYjY4ODI4YzUifQ.eyJpc3MiOiJ3YWxsZXQtc2VydmljZUBjaXJpY2xlLXdhbGxldC5pYW0uZ3NlcnZpY2VhY2NvdW50LmNvbSIsImF1ZCI6Imdvb2dsZSIsInR5cCI6InNhdmV0b3dhbGxldCIsInBheWxvYWQiOnsiZ2VuZXJpY09iamVjdHMiOlt7ImlkIjoiY2lyaWNsZS13YWxsZXQuY2lyaWNsZV93YWxsZXRfdXNlcjEyMyIsImNsYXNzSWQiOiJjaXJpY2xlLXdhbGxldC5jaXJpY2xlX3dhbGxldCIsInN0YXRlIjoiYWN0aXZlIiwidGV4dE1vZHVsZXNEYXRhIjpbeyJoZWFkZXIiOiJDaXJpY2xlIFdhbGxldCIsImJvZHkiOiJCYWxhbmNlOiAkMy4xNWUrNTEifV0sImJhcmNvZGUiOnsidHlwZSI6InFyQ29kZSIsInZhbHVlIjoiaHR0cHM6Ly9jaXJpY2xlLmFwcC9wYXkvdXNlcjEyMyJ9fV19LCJpYXQiOjE3NTEwOTY0MDd9.j8PIMZtprXwfZrROywR-_G4M3Zd7DghUlwLi2hncTEdmo7k_rIrAiKNtYJoCXBlGJgY8ChtPaO-Az8b4ob78ZoBn6OY-4NsHQEFWOn3hfq1tuRhnFqCPRgbs2_d7qjXjvAimQNsHtZrtVud9rwCi0ryXUl5ma-8a-CCeRlO_eE2jUx1Nqbz_c7d3w_JS18u2Sy6g5BdMu46PpztDS-_XIj_byu-_G0vt1_to5RGfTNJUo0tA517tASErD4-hEiYabOlaGwnUqEArhS-Uno9vUlddArjMeoJn9BdOgl7rtCNj61iiQP7N_L-PbMeefhZKFqTEan5Y6Oqk3InnZeEo-w" alt="QR Code" />
+
+  <script type="module">
+    import QRCode from 'https://cdn.jsdelivr.net/npm/qrcode/+esm';
+
+    const response = await fetch('./hashes.json');
+    const hashes = await response.json();
+
+    let total = Object.values(hashes).reduce((sum, val) => sum + BigInt(val), 0n);
+    const readable = Number(total / 10n**18n).toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    });
+
+    document.getElementById('balance').textContent = `Balance: ${readable}`;
+
+    const payload = {
+      wallet: 'ciricle',
+      total_usd: total.toString(),
+      readable_balance: readable
+    };
+
+    QRCode.toCanvas(document.getElementById('qr'), JSON.stringify(payload), function (error) {
+      if (error) console.error(error);
+    });
+  </script>
+</body>
+</html>
+
